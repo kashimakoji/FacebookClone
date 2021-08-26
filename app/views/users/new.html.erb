@@ -1,0 +1,22 @@
+<div class="container">
+<h1 class="title">新規アカウントを作成</h1>
+  <%= form_with(model: @user, local: true) do |f| %>
+  <p>
+    <%= f.label :"名前" %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :"メールアドレス" %>
+    <%= f.text_field :email %>
+  </p>
+<p>
+    <%= f.label :"パスワード" %>
+    <%= f.password_field :password %>
+</p>
+<p>
+    <%= f.label :"確認用パスワード" %>
+    <%= f.password_field :password_confirmation %>
+</p>
+    <%= f.submit "アカウント作成" %>
+  <% end %>
+</div>
