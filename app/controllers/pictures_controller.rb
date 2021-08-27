@@ -21,6 +21,17 @@ class PicturesController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @picture.update(picture_params)
+      redirect_to pictures_path, notice: "更新しました"
+    else
+      render :edit
+    end
+  end
+
   private
   def picture_params
     params.require(:picture).permit(:image, :content)

@@ -9,6 +9,7 @@
     <td><%= pic.image %></td>
     <td><%= pic.content %></td>
     <td><%= link_to '詳細の確認', picture_path(picture.id) %></td>
+    <td><%= link_to '編集する', edit_picture_path(picture.id) %> </td>
   </tr>
 <% end %>
 </table>
