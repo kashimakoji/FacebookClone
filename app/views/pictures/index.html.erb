@@ -4,14 +4,16 @@
   <tr>
     <th>画像</th>
     <th>メッセージ</th>
+    <th>投稿者</th>
   </tr>
 <% @pictures.each do |pic| %>
   <tr>
     <td><%= pic.image %></td>
     <td><%= pic.content %></td>
-    <td><%= link_to '詳細の確認', picture_path(picture.id) %></td>
-    <td><%= link_to '編集する', edit_picture_path(picture.id) %> </td>
-    <td><%= link_to '削除する', picture_path(picture.id), method: :delete, date: { confirm: '本当に削除していいですか？' } %></td>
+    <td><%= pic.user.name %></td>
+    <td><%= link_to '詳細の確認', picture_path(pic.id) %></td>
+    <td><%= link_to '編集する', edit_picture_path(pic.id) %> </td>
+    <td><%= link_to '削除する', picture_path(pic.id), method: :delete, date: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
