@@ -2,7 +2,8 @@
 <%= form_with(model: @picture, local: true) do |form| %>
   <%= form.hidden_field :image %>
   <%= form.hidden_field :content %>
-  <p>画像：<%= @picture.image %></p>
+  <%= form.hidden_field :image_cache %>
+  <p>画像：<%= image_tag @picture.image.url %></p>
   <p>メッセージ：<%= @picture.content %></p>
   <%= form.submit "登録する" %>
   <%= form.submit "戻る", name: 'back' %>

@@ -8,7 +8,7 @@
   </tr>
 <% @pictures.each do |pic| %>
   <tr>
-    <td><%= pic.image %></td>
+    <td><%= image_tag pic.image.url %></td>
     <td><%= pic.content %></td>
     <td><%= pic.user.name %></td>
     <td><%= link_to '詳細の確認', picture_path(pic.id) %></td>
