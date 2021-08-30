@@ -14,7 +14,6 @@
     <%= form.label :"画像:" %>
     <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
     <%= form.file_field :image %>
-    <%#= form.hidden_field :image_cache %>
   </div>
   <div class="picture_content">
     <%= form.label :"メッセージ:" %>
